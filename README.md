@@ -47,6 +47,14 @@ http://localhost:8000
 POST /questions/
 ```
 
+## Пример работы
+
+Запрос к пустой базе:
+![First Request](https://cdn.discordapp.com/attachments/800849536540868642/1162885321260814356/first_request.png?ex=653d9059&is=652b1b59&hm=133f4d70836145bcd3d7ea28b50a18a63cd5088a592518d276e0750da958d1be&)
+
+Запрос к непустой базе:
+![First Request](https://cdn.discordapp.com/attachments/800849536540868642/1162885333097136279/next_request.png?ex=653d905c&is=652b1b5c&hm=5df41df3a1f8aa0d56f16be3b0c2889333b195f82ad48f32021fd29de2b4d53e&)
+
 ## Использование Makefile
 
 - `make up`: Запустить проект
