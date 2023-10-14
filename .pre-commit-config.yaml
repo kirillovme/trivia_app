@@ -43,7 +43,7 @@ repos:
     rev: 6.0.0
     hooks:
     -   id: flake8
-        exclude: __init__.py|settings.py|manage.py|migrations
+        exclude: __init__.py|settings.py|manage.py|migrations|alembic
         args: ["--ignore=E501,F821", "--max-line-length=120"]
 
 # Проверка статических типов с помощью mypy
@@ -51,5 +51,5 @@ repos:
     rev: v0.991
     hooks:
     -   id: mypy
-        exclude: migrations
+        exclude: alembic
         additional_dependencies: [types-redis, types-requests]

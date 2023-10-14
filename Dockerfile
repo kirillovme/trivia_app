@@ -4,7 +4,7 @@ WORKDIR /trivia_app
 
 ENV PYTHONUNBUFFERED=1
 
-COPY ./poetry.lock ./pyproject.toml ./alembic.ini ./
+COPY ./poetry.lock ./pyproject.toml ./alembic.ini ./entrypoint.sh ./
 
 RUN pip install poetry==1.6.1
 

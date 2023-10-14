@@ -1,7 +1,6 @@
 from datetime import datetime
 
 from pydantic import BaseModel
-from typing import Optional
 
 
 class QuestionRequest(BaseModel):
@@ -16,10 +15,10 @@ class QuestionRequest(BaseModel):
 class QuestionSchema(BaseModel):
     """Схема вопроса, содержащая информацию о вопросе для викторины."""
 
-    id: Optional[int]
-    question: Optional[str]
-    answer: Optional[str]
-    created_at: Optional[datetime]
+    id: int | None
+    question: str | None
+    answer: str | None
+    created_at: datetime | None
 
     class Config:
         orm_mode = True
