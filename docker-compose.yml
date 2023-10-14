@@ -8,7 +8,8 @@ services:
       dockerfile: Dockerfile
     restart: always
     container_name: web
-    command: ["./entrypoint.sh"]
+    entrypoint: sh -c "alembic upgrade head
+      && uvicorn app.main:app --host 0.0.0.0 --port 8000"
     volumes:
       - ./app:/app
     depends_on:

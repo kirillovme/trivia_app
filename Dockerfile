@@ -13,5 +13,3 @@ RUN poetry config virtualenvs.create false \
 
 COPY ./app /trivia_app/app
 COPY ./alembic /trivia_app/alembic
-
-RUN chmod +x entrypoint.sh
