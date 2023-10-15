@@ -32,13 +32,15 @@ async def question_exists(db: AsyncSession, question_id: int) -> bool:
 
 async def save_questions(db: AsyncSession, questions_data: list[QuestionSchema]) -> None:
     """Сохранить вопрос в базе данных."""
+    new_questions = []
     for question_data in questions_data:
-        if not await question_exists(db, question_data.id):
-            question = TriviaQuestion(
-                id=question_data.id,
-                question=question_data.question,
-                answer=question_data.answer,
-                created_at=question_data.created_at
-            )
-            db.add(question)
-            await db.commit()
+        question = TriviaQuestion(
+            id=question_data.id,
+            question=question_data.question,
+            answer=question_data.answer,
+            created_at=question_data.created_at
+        )
+        new_questions.append(question)
+    if new_questions:
+        db.add_all(new_questions)
+        await db.commit()
